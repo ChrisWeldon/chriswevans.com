@@ -6,11 +6,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Coming Soon!</h1>
-          <h3>Chris W. Evans' super fancy react base website</h3>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        <div class="container center-block text-center">
+          <div class="row header">
+            <h1>Christopher W. Evans, 19</h1>
+          </div>
+        </div>
       </div>
     );
   }
