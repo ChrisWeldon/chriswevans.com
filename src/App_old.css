@@ -41,7 +41,10 @@
 
 .masthead{
   padding-top:30px;
-  padding-bottom:10px;
+  padding-bottom:45px;
+  background-image : linear-gradient(to top,
+                    rgba(255,255,255, 0),
+                    rgba(255,255,255, 1) 20%);
   /* background-color: #666666 */
 }
 
@@ -54,10 +57,6 @@
 
 .body{
   padding-top: 180px;
-}
-
-.custom-nav{
-  padding-left: 0px;
 }
 
 
