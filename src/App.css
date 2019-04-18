@@ -75,6 +75,13 @@
   color: black;
 }
 
+.nav-link{
+  padding: 0px;
+}
+.nav-item{
+  padding: 0px;
+}
+
 .list-group-item:hover{
   background-color: white;
 }
