@@ -83,6 +83,7 @@
   outline: none;
   border-color: white;
   background-color: white;
+  font-style: bold;
 }
 .list-group-item:focus{
   border: none;
@@ -91,10 +92,11 @@
   border-color: white;
   color: black;
 }
-
 .list-group-item:hover{
   background-color: white;
 }
+
+
 .faded-border {
   //padding: 30px;
   border: 1.5px solid;
