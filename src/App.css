@@ -39,10 +39,32 @@
   border: none;
 }
 
+.app-top-bar{
+  height: 20px;
+  background-color: #666666;
+}
+.app-bot-bar{
+  height: 40px;
+  background-color: #666666;
+}
+
 .masthead{
   padding-top:30px;
-  padding-bottom:10px;
+  padding-bottom:20px;
   /* background-color: #666666 */
+}
+
+.profile-pic{
+  min-height: 230px;
+  height: 15vw;
+  max-height: 250px;
+  margin-left: 100px
+}
+
+
+.profile-pic-column{
+  display: flex;
+  align-items: center;
 }
 
 .sidenav{
@@ -53,7 +75,7 @@
 }
 
 .body{
-  padding-top: 180px;
+  min-height: 800px;
 }
 
 .custom-nav{
@@ -73,13 +95,6 @@
   background-color: white;
   border-color: white;
   color: black;
-}
-
-.nav-link{
-  padding: 0px;
-}
-.nav-item{
-  padding: 0px;
 }
 
 .list-group-item:hover{
