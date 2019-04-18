@@ -61,8 +61,7 @@ class App extends Component {
         <div class="body container">
           <BodyContainer open={this.state.open} data={this.state.data}/>
         </div>
-        <nav class="row app-bot-bar">
-
+        <nav class="app-bot-bar">
         </nav>
       </div>
     );
