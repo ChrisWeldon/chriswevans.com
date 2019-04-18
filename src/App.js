@@ -3,7 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    console.log(this.data)
+    this.state = {
+      'data': {}
+    }
+  }
+
+  componentDidMount(){
+    fetch('./data.json')
+      .then(response=>response.json())
+      .then(data=>this.setState({'data':data}))
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <div class="app-top-bar">
@@ -12,8 +27,8 @@ class App extends Component {
           <div class="container">
             <div class="row">
               <div class="col-5">
-                <h1 class="display-4">Christopher W. Evans</h1>
-                <p class="lead">Portland, Maine</p>
+                <h1 class="display-4">{this.state.data.name}, {this.state.data.age}</h1>
+                <p class="lead">{this.state.data.location}</p>
                 <nav class="custom-nav navbar navbar-expand-lg navbar-light justify-content-center">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,7 +45,7 @@ class App extends Component {
                 </nav>
               </div>
               <div class="col-5 profile-pic-column justify-content-center">
-                <img src="Profile Photo.jpg" class="rounded-circle profile-pic allign-middle" alt="Chris Evans"/>
+                <img src={this.state.data.profile_img} class="rounded-circle profile-pic allign-middle" alt="Chris Evans"/>
               </div>
             </div>
           </div>
