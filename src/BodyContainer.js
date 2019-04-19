@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
+import Markdown from 'markdown-to-jsx';
+const ReactMarkdown = require('react-markdown')
 
 export class BodyContainer extends Component{
   constructor(props){
     super(props)
     this.data = this.props.data
+    this.mdsource = null
+
+    fetch('https://raw.githubusercontent.com/rexxars/react-markdown/master/README.md')
+      .then(response=>response.text())
+      .then(function(data){
+        this.mdsource = data
+        console.log(data)
+      }.bind(this))
   }
 
   render(){
@@ -22,7 +32,27 @@ export class BodyContainer extends Component{
         break;
       case "projects":
         return(
-            <h3>Projects will go here, coming soon.</h3>
+          <div class="row">
+            <div class="col-1">
+              <ul class="projects-nav nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-9">
+              <ReactMarkdown source={this.mdsource} escapeHtml={false}/>
+            </div>
+          </div>
         )
         break;
       case "resume":
