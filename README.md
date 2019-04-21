@@ -45,3 +45,21 @@ The main goal of this site was to host all of my personal material. So I had one
 
 #### Projects
 Project info will probably all change change drastically every month. To keep the site up to date on my projects, serverside scrapes https://github.com/ChrisWeldon/Projects. For each project found in that directory, it pulls the https://raw.githubusercontent.com/ChrisWeldon/<project>/master/README.md and renders that through rexxars' markdown interpreter. This allow me to update all the project info through regular commits.
+
+```js
+fetch('https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md')
+  .then(response=>response.text())
+  .then(function(data){
+    this.mdsource = data
+    console.log(data)
+  }.bind(this))
+
+  ...
+  render(){
+    return(
+      ...
+      <ReactMarkdown source={this.mdsource} escapeHtml={false}/>
+      ...
+    );
+  }
+```
