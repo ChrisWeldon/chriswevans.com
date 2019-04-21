@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# chriswevans.com
+A website to showcase, my projects, my resume, and me. All of the code for this site can be found at https://www.github.com/ChrisWeldon/chriswevans.com
 
-## Available Scripts
+## Overview
+ - Runs on a Node.js backend with a React.js Frontend.
+ - Bootstrap styling
+ - Data driven for ease of updating.
+ - Content outsourcing to github for automatic project page updating.
+ - nginx load balancer and proxy.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+To download this code run
+`git clone https://www.github.com/ChrisWeldon/chriswevans.com`
+then navigate to the directory and run
+`npm install` to get all the depedancies
+when ready for deployment you can run
+`npm run build` to optimize on a host service.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The website is open source so you are more than welcome to use this as a jumpoff point for your own personal sites, but please provide ample credit if you don't overhaul with your own code.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## An In Depth Review.
+A more in depth review of the code.
 
-### `npm test`
+### Architecture
+The base of this website runs on pretty much the usual structure for React apps. All images/icons, data files (including data.json), text files, and index.html exist in the `./public` directory. The rest of the css and js files sit in the `./src` directory.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+All the styling is done with Bootstrap.js to keep the front end simple and asthetically pleasing, while also being easy to implement a mobile version without bending over backwords to ensure compatability for all screen sizes.
 
-### `npm run build`
+### Keeping Up To Date.
+The main goal of this site was to host all of my personal material. So I had one main goal: make it easy to update. There are two main features that I used to do this: make all content data-driven, and avoid redundancy.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Content
+`./public/data.json` holds pretty much all the content for the site such as personal info, text-content, resume info. That way as my experience grows and changes I don't have to completely overhaul the site just fit a couple of extra features (this also makes it easy for anyone to customize the site for themselves).
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### Projects
+Project info will probably all change change drastically every month. To keep the site up to date on my projects, serverside scrapes https://github.com/ChrisWeldon/Projects. For each project found in that directory, it pulls the raw.github.com/ChrisWeldon/<project>/README.md and renders that through rexxars' markdown interpreter. This allow me to update all the project info through regular commits.
