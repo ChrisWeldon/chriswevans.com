@@ -113,14 +113,18 @@
 }
 pre > code{
   border-radius:5px;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   background-color: #ededed;
   text-align: left;
   font-family: "Courier New", Courier, monospace;
 }
-code{
+div > code{
   padding-left: 3px;
   padding-right: 3px;
+  color: black;
   background-color: #ededed;
   font-family: "Courier New", Courier, monospace;
 }
