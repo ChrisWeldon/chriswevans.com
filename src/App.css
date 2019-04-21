@@ -111,12 +111,16 @@
 .projects-nav{
   margin-right: 50px;
 }
-pre{
+pre > code{
   border-radius:5px;
   padding: 10px;
   background-color: #ededed;
   text-align: left;
+  font-family: "Courier New", Courier, monospace;
 }
 code{
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: #ededed;
   font-family: "Courier New", Courier, monospace;
 }

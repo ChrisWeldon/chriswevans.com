@@ -9,7 +9,7 @@ export class BodyContainer extends Component{
     this.data = this.props.data
     this.mdsource = null
 
-    fetch('https://raw.githubusercontent.com/rexxars/react-markdown/master/README.md')
+    fetch('https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md')
       .then(response=>response.text())
       .then(function(data){
         this.mdsource = data
@@ -33,7 +33,7 @@ export class BodyContainer extends Component{
       case "projects":
         return(
           <div class="row">
-            <div class="col-1">
+            <div class="col-2">
               <ul class="projects-nav nav flex-column">
                 <li class="nav-item">
                   <a class="nav-link active" href="#">Active</a>
@@ -49,7 +49,7 @@ export class BodyContainer extends Component{
                 </li>
               </ul>
             </div>
-            <div class="col-9">
+            <div class="col-8">
               <ReactMarkdown source={this.mdsource} escapeHtml={false}/>
             </div>
           </div>
