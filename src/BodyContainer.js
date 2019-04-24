@@ -5,34 +5,44 @@ const ReactMarkdown = require('react-markdown')
 
 export class BodyContainer extends Component{
   constructor(props){
+    console.log("BODY CONTAINER CONSTRUCTED")
     super(props)
     this.data = this.props.data
     this.mdsource = null
-    console.log(Object.keys(this.data))
-    fetch('./README.md')//this.data.projects[1].url_readme
-    .then(response=>response.text())
-    .then(function(data){
-      this.mdsource = data
-      console.log(data)
-    }.bind(this))
   }
 
   render(){
-      console.log(Object.keys(this.data))
+    this.data = this.props.data
+    console.log("BODY CONTAINER RENDERED")
+    //TODO make it render based on project, can do later
       if(Object.keys(this.data.projects).length != 0){
-        fetch('./README.md')//this.data.projects[1].url_readme
+        fetch(this.data.projects[0].url_readme)//this.data.projects[1].url_readme
         .then(response=>response.text())
         .then(function(data){
           this.mdsource = data
         }.bind(this))
+        console.log("MD FETCHED IN RENDER")
       }
 
     switch(this.props.open){
       case "about_me":
         return(
           <div>
-            <img src="./pics/SA_CHALK.JPG" class="keyboard-pic" alt="SA Chalk DZ60"/>
-            <img src="./pics/Tada68.JPG" class="keyboard-pic" alt="SA Chalk DZ60"/>
+            <div class="row">
+              About Me
+            </div>
+            <div class="row">
+              <img src="./pics/SA_CHALK.JPG" class="about-pic" alt="SA Chalk DZ60"/>
+              I love to assemble keyboards,
+            </div>
+            <div class="row">
+              <img src="./pics/Tada68.JPG" class="about-pic" alt="Tada68"/>
+              I love to Bowl,
+            </div>
+            <div class="row">
+              <img src="./pics/Tada68.JPG" class="about-pic" alt="SA Chalk DZ60"/>
+              and I love to Program.
+            </div>
           </div>
         )
         break;
@@ -63,7 +73,7 @@ export class BodyContainer extends Component{
         break;
       case "resume":
         return(
-          <h3>Resume will go here, coming soon.</h3>
+          <h3>Resume will go here, just need to write it.</h3>
         )
         break;
     }

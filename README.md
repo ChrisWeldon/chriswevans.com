@@ -19,6 +19,12 @@ Then navigate to the directory and run:
 npm install
 ```
 to install all the dependencies.
+
+For dev:
+```
+npm start
+```
+
 When ready for deployment you can run:
 ```
 npm run build

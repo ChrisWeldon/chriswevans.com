@@ -8,7 +8,7 @@
    "profile_img": "Profile Photo.jpg",
    "projects":[
      {"name": "chriswevans.com",
-     "url_readme": "./README.md",
+     "url_readme": "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
      "active" : true,
      "in_progress": false},
      {
