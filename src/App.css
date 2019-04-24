@@ -52,6 +52,9 @@
 .masthead{
   padding-top:30px;
   padding-bottom:20px;
+  background-image: url("http://chriswevans.com/pics/BACKGROUND_CAPE.JPG");
+  background-position: 60% 35%;
+  background-size: cover;
   /* background-color: #666666 */
 }
 
