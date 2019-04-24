@@ -29,19 +29,25 @@ export class BodyContainer extends Component{
         return(
           <div>
             <div class="row">
-              About Me
+              <p>My name is Chris Evans. I grew up in Portland, Maine. Attended Highschool at the Maine School of Science and Mathematics in Limestone.
+              Currently I am closing in on the end of my gap year working at Tilson Tech Management while preparing for a month long trip to Japan and the following year at University.</p>
+            </div>
+            <div class="row watercolour-row">
+              <div class="float-md-left">
+              </div>
+              I enjoy Watercolour,
             </div>
             <div class="row">
-              <img src="./pics/SA_CHALK.JPG" class="about-pic" alt="SA Chalk DZ60"/>
-              I love to assemble keyboards,
+              <div class="float-md-right">
+                <img src="./pics/Tada68.JPG" class="float-md-right about-pic" alt="Tada68"/>
+              </div>
+              I love Bowling,
             </div>
             <div class="row">
-              <img src="./pics/Tada68.JPG" class="about-pic" alt="Tada68"/>
-              I love to Bowl,
-            </div>
-            <div class="row">
-              <img src="./pics/Tada68.JPG" class="about-pic" alt="SA Chalk DZ60"/>
-              and I love to Program.
+              <div class="float-md-left">
+                <img src="./pics/Tada68.JPG" class="float-md-left about-pic" alt="SA Chalk DZ60"/>
+              </div>
+              and I love Programming.
             </div>
           </div>
         )
@@ -51,6 +57,7 @@ export class BodyContainer extends Component{
           <div class="row">
             <div class="col-2">
               <ul class="projects-nav nav flex-column">
+              Working on docs for disabled links
                 <li class="nav-item">
                   <a class="nav-link active" href="#">chriswevans.com</a>
                 </li>
