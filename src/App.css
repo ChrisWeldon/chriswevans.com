@@ -23,6 +23,11 @@
   color: white;
 }
 
+.keyboard-pic{
+  border-radius: 10px;
+  height: 200px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -111,7 +116,14 @@
 .projects-nav{
   margin-right: 50px;
 }
-pre > code{
+
+span > img {
+  border-radius:10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* pre > code{
   border-radius:5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -120,8 +132,15 @@ pre > code{
   background-color: #ededed;
   text-align: left;
   font-family: "Courier New", Courier, monospace;
+} */
+
+pre{
+  border-radius:5px;
+  background-color: #ededed;
+  text-align: left;
 }
-div > code{
+code{
+  border-radius:5px;
   padding-left: 3px;
   padding-right: 3px;
   color: black;

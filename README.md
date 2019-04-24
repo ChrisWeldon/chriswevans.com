@@ -10,16 +10,16 @@ A website to showcase, my projects, my resume, and me. All of the code for this 
 
 ## Installation
 
-To download this code run
+To download this code run:
 ```
 git clone https://www.github.com/ChrisWeldon/chriswevans.com
 ```
-then navigate to the directory and run
+Then navigate to the directory and run:
 ```
 npm install
 ```
-to get all the dependencies.
-When ready for deployment you can run
+to install all the dependencies.
+When ready for deployment you can run:
 ```
 npm run build
 ```

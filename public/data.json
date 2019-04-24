@@ -5,5 +5,17 @@
    "name": "Christopher W. Evans",
    "age":"19",
    "location": "Portland, Maine",
-   "profile_img": "Profile Photo.jpg"
+   "profile_img": "Profile Photo.jpg",
+   "projects":[
+     {"name": "chriswevans.com",
+     "url_readme": "./README.md",
+     "active" : true,
+     "in_progress": false},
+     {
+       "name": "Augury",
+       "url_readme":"https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
+       "active":false,
+       "in_progress:":false
+     }
+   ]
 }

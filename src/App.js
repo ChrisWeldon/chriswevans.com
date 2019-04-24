@@ -7,7 +7,9 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      'data': {},
+      'data': {
+        'projects':[]
+      },
       'open': 'about_me'
     }
   }
@@ -18,7 +20,8 @@ class App extends Component {
       .then(data=>this.setState({'data':data}))
   }
 
-  openBodyContainer(open){
+  openBodyContainer(e, open){
+    e.preventDefault()
     if(this.state.open != open){
       this.setState({'open':open})
     }
@@ -26,7 +29,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <div class="app-top-bar">
@@ -45,9 +47,9 @@ class App extends Component {
                     <div class="navbar-nav">
                       <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
                       <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
-                      <a class="nav-item nav-link" onClick={() => this.openBodyContainer('about_me')} href="#">About Me</a>
-                      <a class="nav-item nav-link" onClick={() => this.openBodyContainer('projects')} href="#">Projects</a>
-                      <a class="nav-item nav-link" onClick={() => this.openBodyContainer('resume')} href="#">Résumé</a>
+                      <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'about_me')} href="/About-me">About Me</a>
+                      <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'projects')} href="/Projects">Projects</a>
+                      <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'resume')} href="/Resume">Résumé</a>
                     </div>
                   </div>
                 </nav>
