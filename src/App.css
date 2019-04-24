@@ -144,22 +144,22 @@ span > img {
   background-size: cover;
 }
 .programming-row{
-  background-image: url("http://chriswevans.com/pics/DESK2.JPG");
+  background-image: url("http://chriswevans.com/pics/compressed/DESK2-min.JPG");
   background-position: 50% 45%;
   color: #cccccc;
 }
 .painting-row{
-  background-image: url("http://chriswevans.com/pics/PAINTING.JPG");
+  background-image: url("http://chriswevans.com/pics/compressed/PAINTING-min.JPG");
   background-position: 0% 55%;
   color: #cccccc;
 }
 .bowling-row{
-  background-image: url("http://chriswevans.com/pics/Tada68.JPG");
+  background-image: url("http://chriswevans.com/pics/compressed/Tada68-min.JPG");
   background-position: 50% 50%;
   color: #cccccc;
 }
 .keyboard-row{
-  background-image: url("http://chriswevans.com/pics/SACHALK_tilt.JPG");
+  background-image: url("http://chriswevans.com/pics/compressed/SACHALK_tilt-min.JPG");
   background-position: 50% 50%;
   color: #cccccc;
 }
