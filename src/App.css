@@ -134,9 +134,15 @@ span > img {
   font-family: "Courier New", Courier, monospace;
 } */
 
-watercolour-row{
-  background-image: url("localhost:3000/pics/DESK2.JPG");
+
+.about-row{
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+.bottom-row{
+  padding-top:80px;
+}
+
 
 pre{
   border-radius:5px;

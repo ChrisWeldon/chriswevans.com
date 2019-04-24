@@ -29,25 +29,44 @@ export class BodyContainer extends Component{
         return(
           <div>
             <div class="row">
-              <p>My name is Chris Evans. I grew up in Portland, Maine. Attended Highschool at the Maine School of Science and Mathematics in Limestone.
-              Currently I am closing in on the end of my gap year working at Tilson Tech Management while preparing for a month long trip to Japan and the following year at University.</p>
+              <p>I grew up in Portland, Maine. Attended Highschool at the Maine School of Science and Mathematics in Limestone.
+                As my gap year working at Tilson Tech Management concludes, I am preparing for a month long trip to Japan and the following year at university where I will be studying Computer Science.</p>
             </div>
-            <div class="row watercolour-row">
-              <div class="float-md-left">
+            <div class="row about-row">
+              <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
+                <h4>I Love Bowling</h4>
               </div>
-              I enjoy Watercolour,
+
+              <div class="col-md-4">
+                <img class="img-fluid rounded" src="./pics/SACHALK_tilt.JPG"/>
+              </div>
             </div>
-            <div class="row">
-              <div class="float-md-right">
-                <img src="./pics/Tada68.JPG" class="float-md-right about-pic" alt="Tada68"/>
+            <div class="row about-row">
+              <div class="col-md-4">
+                <img class="img-fluid rounded" src="./pics/DESK2.JPG"/>
               </div>
-              I love Bowling,
+              <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
+                <h4>I Love Programming</h4>
+              </div>
             </div>
-            <div class="row">
-              <div class="float-md-left">
-                <img src="./pics/Tada68.JPG" class="float-md-left about-pic" alt="SA Chalk DZ60"/>
+            <div class="row about-row">
+              <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
+                <h4>I Love Painting</h4>
               </div>
-              and I love Programming.
+              <div class="col-md-4">
+                <img class="img-fluid rounded" src="./pics/PAINTING.JPG"/>
+              </div>
+            </div>
+            <div class="row about-row bottom-row">
+              <div class="col-md-4">
+                <img class="img-fluid rounded" src="./pics/SA_CHALK.JPG"/>
+              </div>
+              <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
+                <h4>Here are my Keyboards</h4>
+              </div>
+              <div class="col-md-4">
+                <img class="img-fluid rounded" src="./pics/Tada68.JPG"/>
+              </div>
             </div>
           </div>
         )
