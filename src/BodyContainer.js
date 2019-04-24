@@ -32,40 +32,24 @@ export class BodyContainer extends Component{
               <p>I grew up in Portland, Maine. Attended Highschool at the Maine School of Science and Mathematics in Limestone.
                 As my gap year working at Tilson Tech Management concludes, I am preparing for a month long trip to Japan and the following year at university where I will be studying Computer Science.</p>
             </div>
-            <div class="row about-row">
-              <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
-                <h4>I Love Bowling</h4>
-              </div>
-
-              <div class="col-md-4">
-                <img class="img-fluid rounded" src="./pics/SACHALK_tilt.JPG"/>
+            <div class="row about-row bowling-row justify-content-center">
+              <div class="d-flex flex-column justify-content-center">
+                <h3>I Love Bowling</h3>
               </div>
             </div>
-            <div class="row about-row">
-              <div class="col-md-4">
-                <img class="img-fluid rounded" src="./pics/DESK2.JPG"/>
-              </div>
-              <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
-                <h4>I Love Programming</h4>
+            <div class="row about-row programming-row justify-content-center">
+              <div class="d-flex flex-column justify-content-center">
+                <h3>I Love Programming</h3>
               </div>
             </div>
-            <div class="row about-row">
-              <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
-                <h4>I Love Painting</h4>
-              </div>
-              <div class="col-md-4">
-                <img class="img-fluid rounded" src="./pics/PAINTING.JPG"/>
+            <div class="row about-row keyboard-row justify-content-center">
+              <div class="d-flex flex-column justify-content-center">
+                <h3>I Love Building Keyboards</h3>
               </div>
             </div>
-            <div class="row about-row bottom-row">
-              <div class="col-md-4">
-                <img class="img-fluid rounded" src="./pics/SA_CHALK.JPG"/>
-              </div>
-              <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
-                <h4>Here are my Keyboards</h4>
-              </div>
-              <div class="col-md-4">
-                <img class="img-fluid rounded" src="./pics/Tada68.JPG"/>
+            <div class="row about-row painting-row justify-content-center  bottom-row">
+              <div class="d-flex flex-column justify-content-center">
+                <h3>and, I Love Painting</h3>
               </div>
             </div>
           </div>

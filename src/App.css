@@ -136,11 +136,35 @@ span > img {
 
 
 .about-row{
+  border-radius: 10px;
+  margin-top: 10px;
   padding-top: 20px;
   padding-bottom: 20px;
+  min-height: 25vh;
+  background-size: cover;
+}
+.programming-row{
+  background-image: url("http://chriswevans.com/pics/DESK2.JPG");
+  background-position: 50% 45%;
+  color: #cccccc;
+}
+.painting-row{
+  background-image: url("http://chriswevans.com/pics/PAINTING.JPG");
+  background-position: 0% 55%;
+  color: #cccccc;
+}
+.bowling-row{
+  background-image: url("http://chriswevans.com/pics/Tada68.JPG");
+  background-position: 50% 50%;
+  color: #cccccc;
+}
+.keyboard-row{
+  background-image: url("http://chriswevans.com/pics/SACHALK_tilt.JPG");
+  background-position: 50% 50%;
+  color: #cccccc;
 }
 .bottom-row{
-  padding-top:80px;
+  margin-bottom:20px;
 }
 
 
