@@ -137,13 +137,19 @@ span > img {
   font-family: "Courier New", Courier, monospace;
 } */
 
+.about-header{
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
 
 .about-row{
   border-radius: 10px;
   margin-top: 10px;
   padding-top: 20px;
   padding-bottom: 20px;
-  min-height: 25vh;
+  min-height: 20vh;
   background-size: cover;
 }
 .programming-row{
