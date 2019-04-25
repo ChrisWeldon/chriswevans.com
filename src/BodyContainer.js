@@ -33,8 +33,8 @@ export class BodyContainer extends Component{
                 <div class="container">
                   <h3 class="display-5">About Me</h3>
                   <hr/>
-                  <p>I grew up in Portland, Maine. Attended Highschool at the Maine School of Science and Mathematics in Limestone.
-                    As my gap year working at Tilson Tech Management concludes, I am preparing for a month long trip to Japan and the following year at university where I will be studying Computer Science.</p>
+                  <p>I was born and raised in Portland Maine, and attended highschool at the Maine School of Science and Mathematics in Limestone. After graduating Highschool and attending a summer long intership at Tilson Tech,
+                  I was offered a fulltime position. Two weeks before classes were scheduled to start, I made an abrupt change of plans and took a gap year. During my gap year, I dedicated my free time to fun and enjoyable pastimes:</p>
                 </div>
               </div>
             </div>
