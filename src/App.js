@@ -39,11 +39,8 @@ class App extends Component {
               <div class="col-5">
                 <h1 class="display-4">{this.state.data.name}, {this.state.data.age}</h1>
                 <p class="lead">{this.state.data.location}</p>
-                <nav class="custom-nav navbar navbar-expand-lg navbar-light justify-content-center">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <nav class="custom-nav navbar navbar-expand-lg navbar-light justify-content-center flex-row">
+                  <div class="navbar" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                       <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
                       <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
