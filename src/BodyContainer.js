@@ -1,29 +1,48 @@
 import React, { Component } from 'react';
 import './App.css';
-import Markdown from 'markdown-to-jsx';
 const ReactMarkdown = require('react-markdown')
 
 export class BodyContainer extends Component{
   constructor(props){
-    console.log("BODY CONTAINER CONSTRUCTED")
     super(props)
     this.data = this.props.data
-    this.mdsource = null
   }
+
+  changeProject(e, url_i){
+    e.preventDefault();
+    this.props.onProjectChange(this.data.projects[url_i].url_readme)
+
+  }
+
+  projectLinks(){
+    let ret_html = []
+    for(let i=0; i<this.data.projects.length;i++){
+      ret_html.push(
+        <li class="nav-item">
+          <a class="nav-link active" onClick={(e)=>this.changeProject(e, i)} href= "#">{this.data.projects[i].name}</a>
+        </li>
+      )
+    }
+    return ret_html
+  }
+
+  // renderMarkdown(){
+  //   if(Object.keys(this.data.projects).length != 0){
+  //     fetch(this.props.readme)//this.data.projects[1].url_readme
+  //     .then(response=>response.text())
+  //     .then(function(data){
+  //       ReactDOM.render(
+  //         <ReactMarkdown source={data} />,
+  //         document.getElementById('markdown-holder')
+  //       )
+  //     }.bind(this))
+  //     console.log("MD FETCHED IN RENDER")
+  //   }
+  // }
 
   render(){
     this.data = this.props.data
-    console.log("BODY CONTAINER RENDERED")
     //TODO make it render based on project, can do later
-      if(Object.keys(this.data.projects).length != 0){
-        fetch(this.data.projects[0].url_readme)//this.data.projects[1].url_readme
-        .then(response=>response.text())
-        .then(function(data){
-          this.mdsource = data
-        }.bind(this))
-        console.log("MD FETCHED IN RENDER")
-      }
-
     switch(this.props.open){
       case "about_me":
         return(
@@ -33,8 +52,7 @@ export class BodyContainer extends Component{
                 <div class="container">
                   <h3 class="display-5">About Me</h3>
                   <hr/>
-                  <p>I was born and raised in Portland Maine, and attended highschool at the Maine School of Science and Mathematics in Limestone. After graduating Highschool and attending a summer long intership at Tilson Tech,
-                  I was offered a fulltime position. Two weeks before classes were scheduled to start, I made an abrupt change of plans and took a gap year. During my gap year, I dedicated my free time to fun and enjoyable pastimes:</p>
+                  <p>{this.data.description}</p>
                 </div>
               </div>
             </div>
@@ -61,32 +79,25 @@ export class BodyContainer extends Component{
           </div>
         )
         break;
+
+
       case "projects":
         return(
           <div class="row">
             <div class="col-2">
               <ul class="projects-nav nav flex-column">
-              Working on docs for disabled links
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">chriswevans.com</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Augury</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">HomeworkHelper</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">BeyWatch</a>
-                </li>
+                Working on docs for disabled links
+                {this.projectLinks()}
               </ul>
             </div>
-            <div class="markup-pane col-8">
-              <ReactMarkdown source={this.mdsource} escapeHtml={false}/>
+            <div class="markup-pane col-8" id="markdown-holder">
+
             </div>
           </div>
         )
         break;
+
+
       case "resume":
         return(
           <h3>Resume will go here, just need to write it.</h3>

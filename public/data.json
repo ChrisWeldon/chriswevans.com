@@ -6,16 +6,35 @@
    "age":"19",
    "location": "Portland, Maine",
    "profile_img": "Profile Photo.jpg",
+   "description": "I was born and raised in Portland Maine, and attended highschool at the Maine School of Science and Mathematics in Limestone. After graduating Highschool and attending a summer long intership at Tilson Tech,   I was offered a fulltime position. Two weeks before classes were scheduled to start, I made an abrupt change of plans and took a gap year. During my gap year, I dedicated my free time to fun and enjoyable pastimes:",
    "projects":[
-     {"name": "chriswevans.com",
-     "url_readme": "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
-     "active" : true,
-     "in_progress": false},
+     {
+        "name": "chriswevans.com",
+       "url_readme": "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
+       "active" : true,
+       "in_progress": false,
+       "raw": null
+     },
      {
        "name": "Augury",
+       "url_readme":"https://raw.githubusercontent.com/fabiospampinato/shortcuts/master/README.md",
+       "active":true,
+       "in_progress:":false,
+       "raw": null
+     },
+     {
+       "name": "BeyWatch",
        "url_readme":"https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
        "active":false,
-       "in_progress:":false
+       "in_progress:":false,
+       "raw": null
      }
-   ]
+   ],
+   "resume":{
+     "profile":{},
+     "workexperience":{},
+     "education":{},
+     "portfolio":{},
+     "skills":{}
+   }
 }

@@ -1,7 +1,9 @@
+import ReactDOM from 'react-dom'
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BodyContainer} from './BodyContainer.js'
+const ReactMarkdown = require('react-markdown')
 
 class App extends Component {
   constructor(props){
@@ -10,8 +12,11 @@ class App extends Component {
       'data': {
         'projects':[]
       },
-      'open': 'about_me'
+      'open': 'about_me',
+      'readme': "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md"
     }
+
+    this.handleProjectChange = this.handleProjectChange.bind(this)
   }
 
   componentDidMount(){
@@ -28,6 +33,21 @@ class App extends Component {
 
   }
 
+  handleProjectChange(url){
+    this.setState({'readme': url}, function(){
+      fetch(this.state.readme)
+      .then(response=>response.text())
+      .then(data=>this.renderMarkdown(data))
+    });
+  }
+
+  renderMarkdown(data){
+    ReactDOM.render(
+      <ReactMarkdown source={data} />,
+      document.getElementById('markdown-holder')
+    )
+  }
+
   render() {
     return (
       <div className="App">
@@ -39,7 +59,7 @@ class App extends Component {
               <div class="col-5">
                 <h1 class="display-4">{this.state.data.name}, {this.state.data.age}</h1>
                 <p class="lead">{this.state.data.location}</p>
-                <nav class="custom-nav navbar navbar-expand-lg navbar-light justify-content-center flex-row">
+                <nav class="custom-nav navbar navbar-expand-lg navbar-light flex-lg-row">
                   <div class="navbar" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                       <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
@@ -58,7 +78,7 @@ class App extends Component {
           </div>
         </div>
         <div class="body container">
-          <BodyContainer open={this.state.open} data={this.state.data}/>
+          <BodyContainer open={this.state.open} readme={this.state.readme} onProjectChange={this.handleProjectChange} data={this.state.data}/>
         </div>
         <footer class="app-bot-bar text-center">
           <p>All photos (excluding photos with Chris Evans as subject) were taken by Chris Evans and are protected under copywrite.</p>
