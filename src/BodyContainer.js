@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReactDOM from 'react-dom'
 const ReactMarkdown = require('react-markdown')
 
 export class BodyContainer extends Component{
@@ -11,7 +12,6 @@ export class BodyContainer extends Component{
   changeProject(e, url_i){
     e.preventDefault();
     this.props.onProjectChange(this.data.projects[url_i].url_readme)
-
   }
 
   projectLinks(){
@@ -25,20 +25,6 @@ export class BodyContainer extends Component{
     }
     return ret_html
   }
-
-  // renderMarkdown(){
-  //   if(Object.keys(this.data.projects).length != 0){
-  //     fetch(this.props.readme)//this.data.projects[1].url_readme
-  //     .then(response=>response.text())
-  //     .then(function(data){
-  //       ReactDOM.render(
-  //         <ReactMarkdown source={data} />,
-  //         document.getElementById('markdown-holder')
-  //       )
-  //     }.bind(this))
-  //     console.log("MD FETCHED IN RENDER")
-  //   }
-  // }
 
   render(){
     this.data = this.props.data
@@ -91,7 +77,7 @@ export class BodyContainer extends Component{
               </ul>
             </div>
             <div class="markup-pane col-8" id="markdown-holder">
-
+              <ReactMarkdown source={this.props.readmedata} />
             </div>
           </div>
         )

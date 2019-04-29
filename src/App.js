@@ -13,7 +13,8 @@ class App extends Component {
         'projects':[]
       },
       'open': 'about_me',
-      'readme': "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md"
+      'readme': "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
+      'readmedata':null
     }
 
     this.handleProjectChange = this.handleProjectChange.bind(this)
@@ -34,18 +35,20 @@ class App extends Component {
   }
 
   handleProjectChange(url){
-    this.setState({'readme': url}, function(){
-      fetch(this.state.readme)
+    fetch(url)
       .then(response=>response.text())
-      .then(data=>this.renderMarkdown(data))
-    });
+      .then(function(data){this.setState({'readme':url, 'readmedata': data})}.bind(this))
   }
 
   renderMarkdown(data){
-    ReactDOM.render(
-      <ReactMarkdown source={data} />,
-      document.getElementById('markdown-holder')
-    )
+
+    if(!!document.getElementById('markdown-holder')){
+      console.log(document.getElementById('markdown-holder'))
+      ReactDOM.hydrate(
+        <ReactMarkdown source={data} />,
+        document.getElementById('markdown-holder')
+      )
+    }
   }
 
   render() {
@@ -78,7 +81,7 @@ class App extends Component {
           </div>
         </div>
         <div class="body container">
-          <BodyContainer open={this.state.open} readme={this.state.readme} onProjectChange={this.handleProjectChange} data={this.state.data}/>
+          <BodyContainer open={this.state.open} readmedata={this.state.readmedata} readme={this.state.readme} onProjectChange={this.handleProjectChange} data={this.state.data}/>
         </div>
         <footer class="app-bot-bar text-center">
           <p>All photos (excluding photos with Chris Evans as subject) were taken by Chris Evans and are protected under copywrite.</p>
