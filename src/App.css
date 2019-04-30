@@ -84,7 +84,14 @@
 
 .custom-nav{
   padding-left: 0px;
-  font-weight: bolder ;
+  word-wrap: normal;
+}
+
+.nav-item.nav-link{
+  font-weight:bold;
+  font-size: 1em;
+  opacity: 1;
+  color:black;
 }
 
 
@@ -120,6 +127,10 @@
 .projects-nav{
   padding-right: 50px;
   height: 40vh;
+}
+
+.projects-nav > .nav-item > .nav-link{
+  color: #6d8ea5;
 }
 
 span > img {
