@@ -21,9 +21,14 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('./data.json')
-      .then(response=>response.json())
-      .then(data=>this.setState({'data':data}))
+    fetch(this.state.readme)
+      .then(response=>response.text())
+      .then(function(readmedata){
+        fetch('./data.json')
+        .then(response=>response.json())
+        .then(data=>this.setState({'data':data, "readmedata":readmedata}))
+      }.bind(this))
+
   }
 
   openBodyContainer(e, open){
