@@ -45,17 +45,6 @@ class App extends Component {
       .then(function(data){this.setState({'readme':url, 'readmedata': data})}.bind(this))
   }
 
-  renderMarkdown(data){
-
-    if(!!document.getElementById('markdown-holder')){
-      console.log(document.getElementById('markdown-holder'))
-      ReactDOM.hydrate(
-        <ReactMarkdown source={data} />,
-        document.getElementById('markdown-holder')
-      )
-    }
-  }
-
   render() {
     return (
       <div className="App">
@@ -64,25 +53,25 @@ class App extends Component {
         <div class="jumbotron jumbotron-fluid masthead">
           <div class="container">
             <div class="row">
-              <div class="col-5">
-                <h1 class="display-4">{this.state.data.name}, {this.state.data.age}</h1>
+              <div class="col-md-5">
+                <h1 class="name-head display-4">{this.state.data.name}, {this.state.data.age}</h1>
                 <p class="lead">{this.state.data.location}</p>
-                <nav class="custom-nav navbar navbar-expand-lg navbar-light flex-lg-row">
-                  <div class="navbar" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                      <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
-                      <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
-                      <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'about_me')} href="/About-me">About Me</a>
-                      <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'projects')} href="/Projects">Projects</a>
-                      <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'resume')} href="/Resume">Résumé</a>
-                    </div>
-                  </div>
-                </nav>
               </div>
-              <div class="col-5 profile-pic-column justify-content-center">
+              <div class="col-md-5 profile-pic-column justify-content-center">
                 <img src={this.state.data.profile_img} class="rounded-circle profile-pic allign-middle" alt="Chris Evans"/>
               </div>
             </div>
+            <nav class="custom-nav navbar navbar-expand-lg navbar-light flex-lg-row">
+              <div class="navbar" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
+                  <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
+                  <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'about_me')} href="/About-me">About Me</a>
+                  <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'projects')} href="/Projects">Projects</a>
+                  <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'resume')} href="/Resume">Résumé</a>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>
         <div class="body container">

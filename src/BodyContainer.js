@@ -19,7 +19,7 @@ export class BodyContainer extends Component{
     for(let i=0; i<this.data.projects.length;i++){
       ret_html.push(
         <li class="nav-item">
-          <a class="nav-link active" onClick={(e)=>this.changeProject(e, i)} href= "#">{this.data.projects[i].name}</a>
+          <a class="nav-link" onClick={(e)=>this.changeProject(e, i)} href= "#">{this.data.projects[i].name}</a>
         </li>
       )
     }
@@ -70,14 +70,13 @@ export class BodyContainer extends Component{
       case "projects":
         return(
           <div class="row">
-            <div class="col-2">
-              <ul class="projects-nav nav flex-column">
-                Working on docs for disabled links
+            <div class="col-md-2 projects-nav-column">
+              <ul class="projects-nav nav flex-column faded-border">
                 {this.projectLinks()}
               </ul>
             </div>
-            <div class="markup-pane col-8" id="markdown-holder">
-              <ReactMarkdown source={this.props.readmedata} />
+            <div class="markup-pane col-md-8" id="markdown-holder">
+              <ReactMarkdown source={this.props.readmedata} escapeHtml={false} />
             </div>
           </div>
         )

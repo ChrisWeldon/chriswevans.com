@@ -57,14 +57,6 @@
   padding-top:2px;
 }
 
-.masthead{
-  padding-top:30px;
-  padding-bottom:20px;
-  background-image: url("http://chriswevans.com/pics/BACKGROUND_CAPE.JPG");
-  background-position: 60% 35%;
-  background-size: cover;
-  /* background-color: #666666 */
-}
 
 .profile-pic{
   min-height: 230px;
@@ -92,6 +84,7 @@
 
 .custom-nav{
   padding-left: 0px;
+  font-weight: bolder ;
 }
 
 
@@ -125,7 +118,8 @@
 }
 
 .projects-nav{
-  margin-right: 50px;
+  padding-right: 50px;
+  height: 40vh;
 }
 
 span > img {
@@ -134,16 +128,16 @@ span > img {
   padding-bottom: 10px;
 }
 
-/* pre > code{
-  border-radius:5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  background-color: #ededed;
-  text-align: left;
-  font-family: "Courier New", Courier, monospace;
-} */
+.faded-border {
+  //padding: 30px;
+  border: 1.5px solid;
+  border-top: 0;
+  border-bottom: 0;
+  border-left:0;
+  border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  border-image-slice: 1;
+}
+
 
 .about-header{
   border-radius: 10px;
@@ -197,4 +191,70 @@ code{
   color: black;
   background-color: #ededed;
   font-family: "Courier New", Courier, monospace;
+}
+
+.masthead{
+  padding-top:30px;
+  padding-bottom:20px;
+  background-image: url("http://chriswevans.com/pics/BACKGROUND_CAPE.JPG");
+  background-position: 60% 35%;
+  background-size: cover;
+  /* background-color: #666666 */
+}
+
+@media (max-width: 500px) {
+  .name-head{
+    font-size: 1.5em;
+    display:block;
+  }
+  .profile-pic{
+    width:0px;
+    height:0px;
+  }
+  .profile-pic-column{
+    width:0px;
+    height:0px;
+  }
+  .navbar-nav{
+    flex-direction: row;
+  }
+  .nav-link{
+    margin-right: 10px;
+  }
+  .App{
+    overflow-x: hidden;
+  }
+  .projects-nav{
+    flex-direction: row;
+    height: inherit;
+    margin-top: 10px;
+  }
+  .faded-border {
+    //padding: 30px;
+    border: 1.5px solid;
+    border-top: 0;
+    border-right: 0;
+    border-left:0;
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(226, 226, 226, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    border-image-slice: 1;
+    padding-bottom: 5px;
+  }
+  .nav-link{
+    display: inline;
+  }
+
+  .markup-pane{
+    word-wrap: break-word;
+  }
+
+  .jumbotron{
+    margin-bottom: 0px;
+    border-radius: 0px;
+  }
+
+  .row{
+    border-radius: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
