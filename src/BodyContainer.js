@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
-import { Document } from "react-pdf";
 const ReactMarkdown = require('react-markdown')
 
 export class BodyContainer extends Component{

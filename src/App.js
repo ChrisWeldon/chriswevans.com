@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BodyContainer} from './BodyContainer.js'
-import { Document, Page } from "react-pdf";
 const ReactMarkdown = require('react-markdown')
 const Discord = require('discord.js')
 
