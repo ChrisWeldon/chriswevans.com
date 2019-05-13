@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BodyContainer} from './BodyContainer.js'
+import { Document, Page } from "react-pdf";
 const ReactMarkdown = require('react-markdown')
+const Discord = require('discord.js')
+
 
 class App extends Component {
   constructor(props){
@@ -19,6 +22,7 @@ class App extends Component {
 
     this.handleProjectChange = this.handleProjectChange.bind(this)
   }
+
 
   componentDidMount(){
     fetch(this.state.readme)

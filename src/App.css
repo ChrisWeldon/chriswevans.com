@@ -197,6 +197,10 @@ span > img {
 .bottom-row{
   margin-bottom:20px;
 }
+.resume{
+  width: 1000px;
+  height: 1170px;
+}
 
 
 pre{
@@ -276,5 +280,16 @@ code{
     border-radius: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .resume{
+    max-width: 100vw;
+    width: 1000px;
+    height: 1170px;
+  }
+
+  .body{
+    min-height: 800px;
+    padding:0px;
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import { Document } from "react-pdf";
 const ReactMarkdown = require('react-markdown')
 
 export class BodyContainer extends Component{
@@ -85,7 +86,11 @@ export class BodyContainer extends Component{
 
       case "resume":
         return(
-          <h3>Resume will go here, just need to write it.</h3>
+          <div>
+            <object className="resume" data="./Resume.pdf" type="application/pdf">
+              <embed src="./Resume.pdf" type="application/pdf"/>
+            </object>
+          </div>
         )
         break;
     }
