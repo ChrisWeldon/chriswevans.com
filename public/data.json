@@ -6,7 +6,7 @@
    "age":"19",
    "location": "Portland, Maine",
    "profile_img": "Profile Photo.jpg",
-   "description": "I was born and raised in Portland Maine, and attended highschool at the Maine School of Science and Mathematics in Limestone. After graduating Highschool and attending a summer long intership at Tilson Tech,   I was offered a fulltime position. Two weeks before classes were scheduled to start, I made an abrupt change of plans and took a gap year. During my gap year, I dedicated my free time to fun and enjoyable pastimes:",
+   "description": "My name is Chris Evans. Currently, I live in Portland Maine and work at Tilson Technology. I went to Highschool in Limestone Maine, and am finishing up a gap year as a fulltime GIS Technician before moving onto being Computer Science student at UMass Amherst in the fall. During the summer I am planning on taking a break while I continue to pursue my interests in bowling, software development, and painting.",
    "projects":[
      {
         "name": "chriswevans.com",
@@ -23,7 +23,7 @@
        "raw": null
      },
      {
-       "name": "BeyWatch",
+       "name": "beybladematch.com",
        "url_readme":"https://raw.githubusercontent.com/ChrisWeldon/Beywatch/master/README.md",
        "active":false,
        "in_progress:":false,

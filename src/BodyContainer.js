@@ -44,22 +44,22 @@ export class BodyContainer extends Component{
             </div>
             <div class="row about-row bowling-row justify-content-center">
               <div class="d-flex flex-column justify-content-center">
-                <h3>I Love Bowling,</h3>
+                <h3>Bowling,</h3>
               </div>
             </div>
             <div class="row about-row programming-row justify-content-center">
               <div class="d-flex flex-column justify-content-center">
-                <h3>I Love Programming,</h3>
+                <h3>Programming,</h3>
               </div>
             </div>
             <div class="row about-row keyboard-row justify-content-center">
               <div class="d-flex flex-column justify-content-center">
-                <h3>I Love Building Keyboards,</h3>
+                <h3>Keyboards,</h3>
               </div>
             </div>
             <div class="row about-row painting-row justify-content-center  bottom-row">
               <div class="d-flex flex-column justify-content-center">
-                <h3>and I Love Painting</h3>
+                <h3>and Painting</h3>
               </div>
             </div>
           </div>
@@ -70,12 +70,12 @@ export class BodyContainer extends Component{
       case "projects":
         return(
           <div class="row">
-            <div class="col-md-2 projects-nav-column">
+            <div class="col-md-3 projects-nav-column">
               <ul class="projects-nav nav flex-column faded-border">
                 {this.projectLinks()}
               </ul>
             </div>
-            <div class="markup-pane col-md-8" id="markdown-holder">
+            <div class="markup-pane col-md-9" id="markdown-holder">
               <ReactMarkdown source={this.props.readmedata} escapeHtml={false} />
             </div>
           </div>

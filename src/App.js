@@ -81,7 +81,7 @@ class App extends Component {
           <BodyContainer open={this.state.open} readmedata={this.state.readmedata} readme={this.state.readme} onProjectChange={this.handleProjectChange} data={this.state.data}/>
         </div>
         <footer class="app-bot-bar text-center">
-          <p>All photos (excluding photos with Chris Evans as subject) were taken by Chris Evans and are protected under copywrite.</p>
+          <p>All photos (excluding photos with Chris Evans as subject) were taken by Chris Evans and are protected under Copywrite.</p>
           <p>Website designed and built by Chris Evans.
           Code License <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a>
           , docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>

@@ -46,7 +46,7 @@
 }
 .app-bot-bar{
   min-height: 50px;
-  font-size: .85rem;
+  font-size: .6rem;
   color:black;
   background-color: #666666;
 }
@@ -134,7 +134,8 @@
 }
 
 .projects-nav{
-  padding-right: 50px;
+  padding-right: 0px;
+  width:200px;
   height: 40vh;
 }
 
