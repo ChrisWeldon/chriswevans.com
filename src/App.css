@@ -256,6 +256,10 @@ code{
   margin-right: 0px;
 }
 
+.row-top{
+  min-heigh:300px;
+}
+
 @media (max-width: 500px) {
   .name-head{
     font-size: 1.8em;
