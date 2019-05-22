@@ -59,7 +59,7 @@
 
 
 .profile-pic{
-  min-height: 230px;
+  min-height: 350px;
   height: 15vw;
   max-height: 250px;
   margin-left: 100px
@@ -80,10 +80,12 @@
 
 .body{
   min-height: 800px;
+  margin:0px;
 }
 
 .custom-nav{
-  padding-left: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-top: 2px;
   padding-bottom: 2px;
   margin-top: 10px;
@@ -94,6 +96,8 @@
 .custom-nav > .navbar{
   padding-top: 3px;
   padding-bottom: 3px;
+  height: 50px;
+  font-size: 1.4em;
 }
 
 .nav-item.nav-link{
@@ -135,8 +139,8 @@
 
 .projects-nav{
   padding-right: 0px;
-  width:200px;
   height: 40vh;
+  font-size: 1.5em;
 }
 
 .projects-nav > .nav-item > .nav-link{
@@ -159,20 +163,29 @@ span > img {
   border-image-slice: 1;
 }
 
+.name-head{
+  font-size: 4.5em;
+}
+
 
 .about-header{
   border-radius: 10px;
   padding-bottom: 10px;
   padding-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
+  margin-top: 0px;
+  font-size: 1.7em;
 }
 
 .about-row{
-  border-radius: 10px;
-  margin-top: 20px;
+  border-radius: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  margin: 0px;
   padding-top: 20px;
   padding-bottom: 20px;
-  min-height: 22vh;
+  min-height:250px;
+  height: 22vh;
   background-size: cover;
 }
 .programming-row{
@@ -183,6 +196,7 @@ span > img {
 .painting-row{
   background-image: url("http://chriswevans.com/pics/compressed/PAINTING-min.JPG");
   background-position: 0% 55%;
+  margin: 0px;
   color: #cccccc;
 }
 .bowling-row{
@@ -195,12 +209,12 @@ span > img {
   background-position: 50% 50%;
   color: #cccccc;
 }
-.bottom-row{
-  margin-bottom:20px;
-}
+
 .resume{
   width: 1000px;
   height: 1170px;
+}
+.resume-div{
 }
 
 
@@ -221,25 +235,52 @@ code{
 .masthead{
   padding-top:30px;
   padding-bottom:20px;
+  margin-bottom:10px;
   background-image: url("http://chriswevans.com/pics/BACKGROUND_CAPE.JPG");
   background-position: 60% 35%;
   background-size: cover;
   /* background-color: #666666 */
 }
 
+.masthead-container{
+  height: 30vh;
+  min-height: 375px;
+}
+
+.body-column{
+
+}
+.body-container{
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 @media (max-width: 500px) {
   .name-head{
-    font-size: 1.5em;
+    font-size: 1.8em;
     display:block;
   }
   .profile-pic{
-    width:0px;
-    height:0px;
+    margin: 0px;
+    height: 25vh;
+    min-height:250px;
   }
   .profile-pic-column{
-    width:0px;
-    height:0px;
+    margin: 0px;
   }
+
+  .custom-nav{
+    padding-left: 0px;
+    padding-right:0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 10px;
+    word-wrap: normal;
+    background-color: gray;
+    background: linear-gradient(to right, rgba(121,121,121,0) 0%, rgba(121,121,121,.5) 10%, rgba(121,121,121,.5) 90%, rgba(121,121,121,0) 100%)
+  }
+
   .navbar-nav{
     flex-direction: row;
   }
@@ -270,6 +311,7 @@ code{
 
   .markup-pane{
     word-wrap: break-word;
+    font-size: 1.5em;
   }
 
   .jumbotron{
@@ -293,4 +335,18 @@ code{
     min-height: 800px;
     padding:0px;
   }
+
+  .about-header{
+    border-radius: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: 10px;
+    margin-top: 0px;
+    font-size: 1em;
+  }
+
+  .row-top{
+    min-height: 400px;
+  }
+
 }

@@ -8,11 +8,12 @@
    "profile_img": "Profile Photo.jpg",
    "description": "My name is Chris Evans. Currently, I live in Portland Maine and work at Tilson Technology. I went to Highschool in Limestone Maine, and am finishing up a gap year as a fulltime GIS Technician before moving onto being Computer Science student at UMass Amherst in the fall. During the summer I am planning on taking a break while I continue to pursue my interests in bowling, software development, and painting.",
    "projects":[
+
      {
-        "name": "chriswevans.com",
-       "url_readme": "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
-       "active" : true,
-       "in_progress": false,
+       "name": "beybladematch.com",
+       "url_readme":"https://raw.githubusercontent.com/ChrisWeldon/Beywatch/master/README.md",
+       "active":false,
+       "in_progress:":false,
        "raw": null
      },
      {
@@ -23,10 +24,10 @@
        "raw": null
      },
      {
-       "name": "beybladematch.com",
-       "url_readme":"https://raw.githubusercontent.com/ChrisWeldon/Beywatch/master/README.md",
-       "active":false,
-       "in_progress:":false,
+        "name": "chriswevans.com",
+       "url_readme": "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
+       "active" : true,
+       "in_progress": false,
        "raw": null
      }
    ],

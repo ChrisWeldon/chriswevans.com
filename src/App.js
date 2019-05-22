@@ -15,7 +15,7 @@ class App extends Component {
         'projects':[]
       },
       'open': 'about_me',
-      'readme': "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
+      'readme': "https://raw.githubusercontent.com/ChrisWeldon/Beywatch/master/README.md",
       'readmedata':null
     }
 
@@ -54,9 +54,9 @@ class App extends Component {
         <div class="app-top-bar">
         </div>
         <div class="jumbotron jumbotron-fluid masthead">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-5">
+          <div class=" masthead-container justify-content-center container">
+            <div class="row  align-items-center">
+              <div class="col-md-5 align-items-center">
                 <h1 class="name-head display-4">{this.state.data.name}, {this.state.data.age}</h1>
                 <p class="lead">{this.state.data.location}</p>
               </div>
@@ -64,20 +64,20 @@ class App extends Component {
                 <img src={this.state.data.profile_img} class="rounded-circle profile-pic allign-middle" alt="Chris Evans"/>
               </div>
             </div>
-            <nav class="custom-nav navbar navbar-expand-lg  flex-lg-row">
-              <div class="navbar" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
-                  <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
-                  <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'about_me')} href="/About-me">About</a>
-                  <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'projects')} href="/Projects">Projects</a>
-                  <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'resume')} href="/Resume">Résumé</a>
-                </div>
-              </div>
-            </nav>
           </div>
+          <nav class="custom-nav navbar navbar-expand-lg  flex-lg-row">
+            <div class="navbar" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
+                <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
+                <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'about_me')} href="/About-me">About</a>
+                <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'projects')} href="/Projects">Projects</a>
+                <a class="nav-item nav-link" onClick={(e) => this.openBodyContainer(e,'resume')} href="/Resume">Résumé</a>
+              </div>
+            </div>
+          </nav>
         </div>
-        <div class="body container">
+        <div class="body container-fluid body-container">
           <BodyContainer open={this.state.open} readmedata={this.state.readmedata} readme={this.state.readme} onProjectChange={this.handleProjectChange} data={this.state.data}/>
         </div>
         <footer class="app-bot-bar text-center">

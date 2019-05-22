@@ -32,10 +32,10 @@ export class BodyContainer extends Component{
     switch(this.props.open){
       case "about_me":
         return(
-          <div>
-            <div class="row">
+          <div className="body-column">
+            <div class="row about-row row-top justify-content-center">
               <div class="jumbotron jumbotron-fluid about-header">
-                <div class="container">
+                <div class="container-fluid">
                   <h3 class="display-5">About Me</h3>
                   <hr/>
                   <p>{this.data.description}</p>
@@ -69,13 +69,13 @@ export class BodyContainer extends Component{
 
       case "projects":
         return(
-          <div class="row">
-            <div class="col-md-3 projects-nav-column">
+          <div class="row justify-content-center">
+            <div class="col-md-2 projects-nav-column justify-content-center">
               <ul class="projects-nav nav flex-column faded-border">
                 {this.projectLinks()}
               </ul>
             </div>
-            <div class="markup-pane col-md-9" id="markdown-holder">
+            <div class="markup-pane col-md-8" id="markdown-holder">
               <ReactMarkdown source={this.props.readmedata} escapeHtml={false} />
             </div>
           </div>
@@ -86,9 +86,12 @@ export class BodyContainer extends Component{
       case "resume":
         return(
           <div>
-            <object className="resume" data="./Resume.pdf" type="application/pdf">
-              <embed src="./Resume.pdf" type="application/pdf"/>
-            </object>
+            <h3 className="row justify-content-center"><a href="./Resume.pdf">www.chriswevans.com/Resume.pdf</a></h3>
+            <div className="resume-div row justify-content-center">
+              <object className="resume row" data="./Resume.pdf" type="application/pdf">
+                <embed src="./Resume.pdf" type="application/pdf"/>
+              </object>
+            </div>
           </div>
         )
         break;
