@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom'
 import { Link, Route, Switch } from 'react-router-dom';
+import {Navbar, NavDropdown, Button, Nav, Form, FormControl, Spinner} from 'react-bootstrap'
 import React, { Component, useState, useCallback } from 'react';
 import Gallery from 'react-photo-gallery'
 import Carousel, { Modal, ModalGateway } from "react-images";
@@ -76,6 +77,16 @@ class Projects extends Component{
     return ret_html
   }
 
+  projectLinksRB(){
+    let ret_html = []
+    for(let i=0; i<this.props.data.projects.length;i++){
+      ret_html.push(
+          <Nav.Link class="nav-link" onClick={(e)=>this.changeProject(e, i)} href= "#">{this.props.data.projects[i].name}</Nav.Link>
+      )
+    }
+    return ret_html
+  }
+
   projectRoutes(){
     let ret_html = []
     for(let i=0; i<this.props.data.projects.length;i++){
@@ -90,16 +101,18 @@ class Projects extends Component{
 
   render(){
     return(
+      <>
+      <Navbar bg="light" expand="lg">
+        <Nav className="mr-auto">
+          {this.projectLinksRB()}
+        </Nav>
+      </Navbar>
       <div class="row justify-content-center">
-        <div class="col-md-2 projects-nav-column justify-content-center">
-          <ul class="projects-nav nav flex-column faded-border">
-            {this.projectLinks()}
-          </ul>
-        </div>
         <div class="markup-pane col-md-8" id="markdown-holder">
           <ReactMarkdown source={this.props.readmedata} escapeHtml={false} />
         </div>
       </div>
+      </>
     )
   }
 }
@@ -188,9 +201,10 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <nav class="custom-nav navbar navbar-expand-lg  flex-lg-row">
-            <div class="navbar" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
+          <Navbar class="custom-nav"  expand="lg">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
                 <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
                 <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
                 <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
@@ -198,9 +212,9 @@ class App extends Component {
                 <Link class = "nav-item nav-link" to="/projects" >Projects</Link>
                 <Link class = "nav-item nav-link" to="/resume" >Résumé</Link>
                 <Link class = "nav-item nav-link" to="/gallery" >Gallery</Link>
-              </div>
-            </div>
-          </nav>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
         </div>
         <div class="body container-fluid body-container">
           <Route path="/about" render = {() => (
@@ -222,15 +236,25 @@ class App extends Component {
           )}/>
           <Route path="/gallery" render = {({match})=>(
             <>
-            <Link to={match.url + "/NiigataShrine"}>Niigata Shrine</Link>
-            <Link to={match.url + "/KiteFighting"}>Kite Fighting</Link>
+            <Navbar className="" bg="light" expand="lg">
+              <Nav className="mr-auto">
+                <Link class="nav-item nav-link" to={match.url + "/NiigataShrine"}>Niigata Shrine</Link>
+                <Link class="nav-item nav-link" to={match.url + "/KiteFighting"}>Kite Fighting</Link>
+              </Nav>
+            </Navbar>
+
             <Route path={match.url + "/:album"} render = {function({match}){
               if(this.state.album != match.params.album){
                 fetch("/pics/gallery/" + match.params.album + "/ratios.json")
                   .then(response=>response.json())
                   .then(data=>this.setState({album:match.params.album, photos:data}))
                 return(
-                  <h2>Loading</h2>
+                  <>
+                  <h2>Loading...</h2>
+                  <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                  </>
                 )
               }else{
                 return(
@@ -251,11 +275,16 @@ class App extends Component {
           )}/>
         </div>
         <footer class="app-bot-bar text-center">
-          <p>All photos are protected under Copywrite.</p>
+          <div class="row d-flex justify-content-center">
+            <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
+            <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
+            <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
+          </div>
           <p>Website designed and built by Chris Evans.
           Code License <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a>
           , docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>
           </p>
+          <p>All photos are protected under Copywrite.</p>
         </footer>
       </div>
     );
