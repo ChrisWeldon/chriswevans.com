@@ -5,8 +5,8 @@
    "name": "Christopher W. Evans",
    "age":"19",
    "location": "Portland, Maine",
-   "profile_img": "Profile Photo.jpg",
-   "description": "My name is Chris Evans. Currently, I live in Portland Maine and work at Tilson Technology. I went to Highschool in Limestone Maine, and am finishing up a gap year as a fulltime GIS Technician before moving onto being Computer Science student at UMass Amherst in the fall. During the summer I am planning on taking a break while I continue to pursue my interests in bowling, software development, and painting.",
+   "profile_img": "/Profile Photo.jpg",
+   "description": "My name is Chris Evans. Currently, I live in Portland Maine and work at Tilson Technology. I went to Highschool at the Maine School for Science and Math. Now I am finishing up a gap year as a fulltime GIS Technician before moving onto a  Computer Science degree at UMass Amherst. During the summer I will be taking a break to continue to pursue my interests in bowling, software development, and painting.",
    "projects":[
 
      {
@@ -18,7 +18,7 @@
      },
      {
        "name": "Augury",
-       "url_readme":"./private_markdowns/Augury.md",
+       "url_readme":"/private_markdowns/Augury.md",
        "active":true,
        "in_progress:":false,
        "raw": null
