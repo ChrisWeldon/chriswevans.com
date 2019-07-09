@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Redirect, Switch } from 'react-router-dom';
 import {Navbar, NavDropdown, Button, Nav, Form, FormControl, Spinner} from 'react-bootstrap'
 import React, { Component, useState, useCallback } from 'react';
 import Gallery from 'react-photo-gallery'
@@ -77,11 +77,13 @@ class Projects extends Component{
     return ret_html
   }
 
-  projectLinksRB(){
+  projectLinksRB(match){
     let ret_html = []
     for(let i=0; i<this.props.data.projects.length;i++){
       ret_html.push(
+          <>
           <Nav.Link class="nav-link" onClick={(e)=>this.changeProject(e, i)} href= "#">{this.props.data.projects[i].name}</Nav.Link>
+          </>
       )
     }
     return ret_html
@@ -217,12 +219,62 @@ class App extends Component {
           </Navbar>
         </div>
         <div class="body container-fluid body-container">
+          <Route exact path="/" render={()=>(
+            <Redirect to="/about"/>
+          )}/>
           <Route path="/about" render = {() => (
             <About data={this.state.data}/>
           )}
           />
+          <Route exact path="/projects" render={({match})=>(
+            <Redirect to ={match.url + "/Beywatch"}/>
+          )}/>
           <Route path="/projects" render = {({match}) => (
-            <Projects path={"/projects"} readmedata={this.state.readmedata} readme={this.state.readme} onProjectChange={this.handleProjectChange} data={this.state.data} path={this.path}/>
+            <>
+            <Navbar bg="light" expand="lg">
+              <Nav className="mr-auto">
+                <Link class="nav-link" to={match.url + "/chriswevans.com"}>chrisevans.com</Link>
+                <Link class="nav-link" to={match.url + "/Augury"}>Augury</Link>
+                <Link class="nav-link" to={match.url + "/Beywatch"}>beybladematch.com</Link>
+              </Nav>
+            </Navbar>
+
+            <Route path={match.url + "/:project"} render={function({match}){
+              if(this.state.project != match.params.project){
+                fetch("https://raw.githubusercontent.com/ChrisWeldon/" +match.params.project+"/master/README.md")
+                  .then(function(response){
+                    if(response.status != 200){
+                      throw new Error("response not 200")
+                    }else{
+                      return(response.text())
+                    }
+                  })
+                  .then(data=>this.setState({project:match.params.project, projectreadme:data}))
+                  .catch(function(err){
+                    fetch("/private_markdowns/"+match.params.project+".md")
+                          .then(response=>response.text())
+                          .then(data=>this.setState({project:match.params.project, projectreadme:data}))
+                  }.bind(this))
+
+                return(
+                  <>
+                  <h2>Loading...</h2>
+                  <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                  </>
+                )
+              }else{
+                return(
+                  <div class="row justify-content-center">
+                    <div class="markup-pane col-md-8" id="markdown-holder">
+                      <ReactMarkdown source={this.state.projectreadme} escapeHtml={false} />
+                    </div>
+                  </div>
+                )
+              }
+            }.bind(this)}/>
+            </>
           )}/>
           <Route path="/resume" render = {()=>(
             <div>
@@ -234,10 +286,14 @@ class App extends Component {
               </div>
             </div>
           )}/>
+          <Route exact path="/gallery" render={()=>(
+            <Redirect to="/gallery/All"/>
+          )}/>
           <Route path="/gallery" render = {({match})=>(
             <>
             <Navbar className="" bg="light" expand="lg">
               <Nav className="mr-auto">
+                <Link class="nav-item nav-link" to={match.url + "/All"}>All</Link>
                 <Link class="nav-item nav-link" to={match.url + "/NiigataShrine"}>Niigata Shrine</Link>
                 <Link class="nav-item nav-link" to={match.url + "/KiteFighting"}>Kite Fighting</Link>
               </Nav>
@@ -275,7 +331,7 @@ class App extends Component {
           )}/>
         </div>
         <footer class="app-bot-bar text-center">
-          <div class="row d-flex justify-content-center">
+          <div class="d-flex justify-content-center">
             <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
             <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
             <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
@@ -290,30 +346,4 @@ class App extends Component {
     );
   }
 }
-
-//NEED TO GET State into this heirarchy
-
-function Albums({match}){
-  return(
-    <>
-    <Link to={match.url + "/NiigataShrine"}>Niigata Shrine</Link>
-    <Route path={match.url + "/:album"} component = {Blah}/>
-    </>
-  )
-}
-
-function Blah({match}){
-  if(this.state.album != match.params.album){
-    //fetch("http://localhost:3000/pics/gallery/" + match.params.album + "/ratios.json").then(response=>response.json()).then(data=>this.setState({album:match.params.album, photos:data}))
-    return(
-      <h1>{match.params.album}</h1>
-    )
-  }
-  else{
-    return(
-      <Gallery photos={this.state.photos}/>
-    )
-  }
-}
-
 export default App;
