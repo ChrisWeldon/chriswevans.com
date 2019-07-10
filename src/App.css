@@ -59,9 +59,9 @@
 
 
 .profile-pic{
-  min-height: 350px;
+  min-height: 300px;
   height: 15vw;
-  max-height: 250px;
+  max-height: 200px;
   margin-left: 100px
 }
 
@@ -93,6 +93,7 @@
   background-color: gray;
   background: linear-gradient(to right, rgba(121,121,121,0) 0%, rgba(121,121,121,.5) 10%, rgba(121,121,121,.5) 90%, rgba(121,121,121,0) 100%)
 }
+
 .custom-nav > .navbar{
   padding-top: 3px;
   padding-bottom: 3px;
@@ -235,7 +236,7 @@ code{
 .masthead{
   padding-top:30px;
   padding-bottom:20px;
-  margin-bottom:10px;
+  margin-bottom:0px;
   background-image: url("http://chriswevans.com/pics/BACKGROUND_CAPE.JPG");
   background-position: 60% 35%;
   background-size: cover;
@@ -260,15 +261,68 @@ code{
   min-heigh:300px;
 }
 
+.primary-nav{
+
+}
+
+.navbar-light{
+  padding-left: 0px;
+}
+
+.secondary-nav{
+  margin: 0px;
+  text-align: center;
+  width:100%;
+  justify-content: center;
+}
+
+.mobile-nav{
+  height: 0px;
+  margin: 0px;
+  padding: 0px;
+  visibility: collapse;
+}
+
+
+
+.markup-pane{
+  word-wrap: break-word;
+  font-size: 1.5em;
+  padding-top: 10px;
+}
+
+.markup-row{
+}
+
+
 @media (max-width: 500px) {
+
+  .mobile-nav{
+    height:inherit;
+    padding: inherit;
+    margin:inherit;
+    margin-top: 10px;
+    visibility: visible;
+  }
+
+  .navbar-light{
+    padding-left:20px;
+  }
+
+  .desk-nav{
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    visibility: collapse;
+  }
   .name-head{
     font-size: 1.8em;
     display:block;
   }
   .profile-pic{
     margin: 0px;
-    height: 25vh;
-    min-height:250px;
+    height: 20vh;
+    min-height:220px;
   }
   .profile-pic-column{
     margin: 0px;
@@ -279,6 +333,7 @@ code{
     padding-right:0px;
     padding-top: 2px;
     padding-bottom: 2px;
+    margin-left: 30%;
     margin-top: 10px;
     word-wrap: normal;
     background-color: gray;
@@ -316,6 +371,9 @@ code{
   .markup-pane{
     word-wrap: break-word;
     font-size: 1.5em;
+  }
+
+  .markup-row{
   }
 
   .jumbotron{

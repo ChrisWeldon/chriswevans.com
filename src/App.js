@@ -55,70 +55,6 @@ class About extends Component{
   }
 }
 
-class Projects extends Component{
-  constructor(props){
-    super(props)
-  }
-
-  changeProject(e, url_i){
-    e.preventDefault();
-    this.props.onProjectChange(this.props.data.projects[url_i].url_readme)
-  }
-
-  projectLinks(){
-    let ret_html = []
-    for(let i=0; i<this.props.data.projects.length;i++){
-      ret_html.push(
-        <li class="nav-item">
-          <a class="nav-link" onClick={(e)=>this.changeProject(e, i)} href= "#">{this.props.data.projects[i].name}</a>
-        </li>
-      )
-    }
-    return ret_html
-  }
-
-  projectLinksRB(match){
-    let ret_html = []
-    for(let i=0; i<this.props.data.projects.length;i++){
-      ret_html.push(
-          <>
-          <Nav.Link class="nav-link" onClick={(e)=>this.changeProject(e, i)} href= "#">{this.props.data.projects[i].name}</Nav.Link>
-          </>
-      )
-    }
-    return ret_html
-  }
-
-  projectRoutes(){
-    let ret_html = []
-    for(let i=0; i<this.props.data.projects.length;i++){
-      ret_html.push(
-        <Route path={"/projects/"+this.props.data.projects[i].name} render = {({ match: { url } }) => (
-          <ReactMarkdown source={this.props.data.projects[i].readmedata} escapeHtml={false} />
-        )}/>
-      )
-    }
-    return ret_html
-  }
-
-  render(){
-    return(
-      <>
-      <Navbar bg="light" expand="lg">
-        <Nav className="mr-auto">
-          {this.projectLinksRB()}
-        </Nav>
-      </Navbar>
-      <div class="row justify-content-center">
-        <div class="markup-pane col-md-8" id="markdown-holder">
-          <ReactMarkdown source={this.props.readmedata} escapeHtml={false} />
-        </div>
-      </div>
-      </>
-    )
-  }
-}
-
 class App extends Component {
   constructor(props){
     super(props)
@@ -197,16 +133,27 @@ class App extends Component {
               <div class="col-md-5 align-items-center">
                 <h1 class="name-head display-4">{this.state.data.name}, {this.state.data.age}</h1>
                 <p class="lead">{this.state.data.location}</p>
+                <Navbar class="primary-nav"  expand="lg">
+                  <Nav className="desk-nav primary-nav mr-auto">
+                    <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
+                    <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
+                    <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
+                    <Link class = "nav-item nav-link" to="/about" >About</Link>
+                    <Link class = "nav-item nav-link" to="/projects" >Projects</Link>
+                    <Link class = "nav-item nav-link" to="/resume" >Résumé</Link>
+                    <Link class = "nav-item nav-link" to="/gallery" >Gallery</Link>
+                  </Nav>
+                </Navbar>
               </div>
               <div class="col-md-5 profile-pic-column justify-content-center">
                 <img src={this.state.data.profile_img} class="rounded-circle profile-pic allign-middle" alt="Chris Evans"/>
               </div>
             </div>
           </div>
-          <Navbar class="custom-nav"  expand="lg">
+          <Navbar class=""  expand="lg">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
+              <Nav className="mobile-nav flex-wrap primary-nav mr-auto">
                 <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
                 <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
                 <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
@@ -231,8 +178,8 @@ class App extends Component {
           )}/>
           <Route path="/projects" render = {({match}) => (
             <>
-            <Navbar bg="light" expand="lg">
-              <Nav className="mr-auto">
+            <Navbar className="" bg="light" expand="lg">
+              <Nav className="flex-wrap secondary-nav mr-auto">
                 <Link class="nav-link" to={match.url + "/chriswevans.com"}>chrisevans.com</Link>
                 <Link class="nav-link" to={match.url + "/Augury"}>Augury</Link>
                 <Link class="nav-link" to={match.url + "/Beywatch"}>beybladematch.com</Link>
@@ -266,7 +213,7 @@ class App extends Component {
                 )
               }else{
                 return(
-                  <div class="row justify-content-center">
+                  <div class="markup-row row justify-content-center">
                     <div class="markup-pane col-md-8" id="markdown-holder">
                       <ReactMarkdown source={this.state.projectreadme} escapeHtml={false} />
                     </div>
@@ -292,10 +239,10 @@ class App extends Component {
           <Route path="/gallery" render = {({match})=>(
             <>
             <Navbar className="" bg="light" expand="lg">
-              <Nav className="mr-auto">
-                <Link class="nav-item nav-link" to={match.url + "/All"}>All</Link>
-                <Link class="nav-item nav-link" to={match.url + "/NiigataShrine"}>Niigata Shrine</Link>
-                <Link class="nav-item nav-link" to={match.url + "/KiteFighting"}>Kite Fighting</Link>
+              <Nav className="flex-wrap secondary-nav mr-auto">
+                <Link class="nav-link" to={match.url + "/All"}>All</Link>
+                <Link class="nav-link" to={match.url + "/NiigataShrine"}>Niigata Shrine</Link>
+                <Link class="nav-link" to={match.url + "/KiteFighting"}>Kite Fighting</Link>
               </Nav>
             </Navbar>
 
