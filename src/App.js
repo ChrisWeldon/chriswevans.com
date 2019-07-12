@@ -228,7 +228,7 @@ class App extends Component {
               <h3 className="row justify-content-center"><a href="./Resume.pdf">www.chriswevans.com/Resume.pdf</a></h3>
               <div className="resume-div row justify-content-center">
                 <object className="resume row" data="./Resume.pdf" type="application/pdf">
-                  <embed src="./Resume.pdf" type="application/pdf"/>
+                  <embed className="resume-embed" src="./Resume.pdf" type="application/pdf"/>
                 </object>
               </div>
             </div>
