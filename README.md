@@ -114,10 +114,10 @@ I cp'ed this code into the docs because I use a similar structure for the rest o
 
 ```
 
-###Gallery
+### Gallery
 
 The code for the Gallery portion was very similar to the code for the projects section only instead of using React-markdown, I used React-Gallery and React-Images. I originally played with writing my own Mosaic viewer but landed on using this because I have other projects I am more interested...why reinvent the wheel.
 
-###Resume
+### Resume
 
 Also very simple page, just Iframe's into a hosted version of my resume.
