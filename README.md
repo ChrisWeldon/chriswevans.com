@@ -120,6 +120,7 @@ The code for the Gallery portion was very similar to the code for the projects s
 
 The React gallery page is organized by collection. On the local machine, each collection is a folder with the title as the Route. React-Gallery requires an object that contains the src of each photo as well as the dimensions.
 
+```
 gallery:
   |--All:
       |--<Photos>
@@ -128,6 +129,7 @@ gallery:
       |--<Photos>
       |--ratios.json
   |--<Albums>
+```
 
 The file ratios.json contains the path and the size of all the photos. To collect this I just made a little python script that I run every time I make changes to the gallery filestructure. All it does is go album to album and creates a ratios.json as well as placing one in the ./All directory with has the data for all photos in all directories as well as any that don't exist inside a collection. For example "Sadboy-6.jpg" is a one-off photo, so I placed it inside the ./All directory to be included in "All" but it will not be included in any specific directory.
 
