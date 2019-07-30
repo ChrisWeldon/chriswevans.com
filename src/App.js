@@ -180,8 +180,8 @@ class App extends Component {
             <>
             <Navbar className="" bg="light" expand="lg">
               <Nav className="flex-wrap secondary-nav mr-auto">
-                <Link class="nav-link" to={match.url + "/chriswevans.com"}>chrisevans.com</Link>
-                <Link class="nav-link" to={match.url + "/CSGOLabeled_Database_Builder"}>Augury</Link>
+                <Link class="nav-link" to={match.url + "/chriswevans.com"}>chriswevans.com</Link>
+                <Link class="nav-link" to={match.url + "/CSGOLabeled_Database_Builder"}>CSGO Match Prediction</Link>
                 <Link class="nav-link" to={match.url + "/Beywatch"}>beybladematch.com</Link>
               </Nav>
             </Navbar>
