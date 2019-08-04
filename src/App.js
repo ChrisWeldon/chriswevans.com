@@ -244,6 +244,8 @@ class App extends Component {
                 <Link class="nav-link" to={match.url + "/NiigataShrine"}>Niigata Shrine</Link>
                 <Link class="nav-link" to={match.url + "/KiteFighting"}>Kite Fighting</Link>
                 <Link class="nav-link" to={match.url + "/Iwakuni"}>Iwakuni</Link>
+                <Link class="nav-link" to={match.url + "/Tosho-Gu"}>Tosho-Gu</Link>
+                <Link class="nav-link" to={match.url + "/Hokkaido"}>Hokkaido</Link>
               </Nav>
             </Navbar>
 
