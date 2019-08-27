@@ -6,6 +6,10 @@
   overflow-x: hidden;
 }
 
+img {
+  max-width: 100%;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -426,5 +430,4 @@ code{
   .row-top{
     min-height: 400px;
   }
-
 }
