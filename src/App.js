@@ -19,36 +19,34 @@ class About extends Component{
   }
 
   render(){
+    if(false){
+      return(
+        <>
+      <div class="row about-row bowling-row justify-content-center">
+        <div class="d-flex flex-column justify-content-center">
+        </div>
+      </div>
+      <div class="row about-row programming-row justify-content-center">
+        <div class="d-flex flex-column justify-content-center">
+        </div>
+      </div>
+      <div class="row about-row keyboard-row justify-content-center">
+        <div class="d-flex flex-column justify-content-center">
+        </div>
+      </div>
+      <div class="row about-row painting-row justify-content-center  bottom-row">
+        <div class="d-flex flex-column justify-content-center">
+        </div>
+      </div>
+      </>
+    )
+    }
     return (
-      <div className="body-column">
-        <div class="row about-row row-top justify-content-center">
-          <div class="jumbotron jumbotron-fluid about-header">
-            <div class="container-fluid">
-              <h3 class="display-5">About Me</h3>
-              <hr/>
-              <p>{this.props.data.description}</p>
-            </div>
-          </div>
-        </div>
-        <div class="row about-row bowling-row justify-content-center">
-          <div class="d-flex flex-column justify-content-center">
-            <h3>Bowling,</h3>
-          </div>
-        </div>
-        <div class="row about-row programming-row justify-content-center">
-          <div class="d-flex flex-column justify-content-center">
-            <h3>Programming,</h3>
-          </div>
-        </div>
-        <div class="row about-row keyboard-row justify-content-center">
-          <div class="d-flex flex-column justify-content-center">
-            <h3>Keyboards,</h3>
-          </div>
-        </div>
-        <div class="row about-row painting-row justify-content-center  bottom-row">
-          <div class="d-flex flex-column justify-content-center">
-            <h3>and Painting</h3>
-          </div>
+      <div className="about-body">
+        <div class="about-text container">
+          <h3 class="display-5">About Me</h3>
+          <hr/>
+          <p>{this.props.data.description}</p>
         </div>
       </div>
     )

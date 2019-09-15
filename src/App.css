@@ -6,6 +6,23 @@
   overflow-x: hidden;
 }
 
+.about-body{
+  height: 60vh;
+  min-width: 100vw;
+  padding-top:30px;
+  padding-bottom:20px;
+  margin-bottom:0px;
+  background-image: url("http://chriswevans.com/pics/gallery/KiteFighting/Kites-7.jpg");
+  background-position: 100% 10%;
+  background-size: cover;
+  align-items: center;
+}
+
+.about-text{
+  padding-top: 15px;
+  margin-left: 220px;
+}
+
 img {
   max-width: 100%;
 }
@@ -83,7 +100,7 @@ img {
 }
 
 .body{
-  min-height: 800px;
+  min-height: 500px;
   margin:0px;
 }
 
@@ -414,7 +431,7 @@ code{
 
 
   .body{
-    min-height: 800px;
+    //min-height: 10vh;
     padding:0px;
   }
 
