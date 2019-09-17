@@ -322,6 +322,9 @@ code{
   .name-head{
     font-size: 2.8em;
   }
+  .App{
+    overflow-x: hidden;
+  }
 }
 
 /* @media (max-width: 500px) {
