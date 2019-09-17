@@ -7,20 +7,22 @@
 }
 
 .about-body{
-  height: 60vh;
+  //height: 60vh;
   min-width: 100vw;
   padding-top:30px;
   padding-bottom:20px;
   margin-bottom:0px;
-  background-image: url("http://chriswevans.com/pics/gallery/KiteFighting/Kites-7.jpg");
-  background-position: 100% 10%;
+
+  /* background-image: url("http://chriswevans.com/pics/gallery/KiteFighting/Kites-26.jpg");
+  background-position: 60% 0%;
   background-size: cover;
-  align-items: center;
+  align-items: center; */
 }
 
 .about-text{
   padding-top: 15px;
-  margin-left: 220px;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 img {
@@ -54,7 +56,8 @@ img {
 }
 
 .social-media{
-  max-height: 20px;
+  height: 20px;
+  min-width: 20px;
 }
 
 .menu-item{
@@ -78,19 +81,6 @@ img {
   padding-top:2px;
 }
 
-
-.profile-pic{
-  min-height: 300px;
-  height: 15vw;
-  max-height: 200px;
-  margin-left: 100px
-}
-
-
-.profile-pic-column{
-  display: flex;
-  align-items: center;
-}
 
 .sidenav{
   height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -187,6 +177,7 @@ span > img {
 
 .name-head{
   font-size: 4.5em;
+  word-wrap: break-word;
 }
 
 
@@ -263,15 +254,25 @@ code{
   padding-top:30px;
   padding-bottom:20px;
   margin-bottom:0px;
-  background-image: url("http://chriswevans.com/pics/BACKGROUND_CAPE.JPG");
-  background-position: 60% 35%;
+
+  background-image: url("http://chriswevans.com/pics/gallery/KiteFighting/Kites-7.jpg");
+  background-position: 60% 0%;
   background-size: cover;
+  align-items: center;
+
+  /* background-color: Green; */
+  /* background-image: url("http://chriswevans.com/pics/BACKGROUND_CAPE.JPG");
+  background-position: 60% 35%;
+  background-size: cover; */
+
   /* background-color: #666666 */
 }
 
 .masthead-container{
   height: 30vh;
-  min-height: 375px;
+  min-height: 250px;
+  background: rgba(76, 175, 80, 0.0);
+
 }
 
 .body-column{
@@ -284,11 +285,7 @@ code{
 }
 
 .row-top{
-  min-heigh:300px;
-}
-
-.primary-nav{
-
+  min-height:300px;
 }
 
 .navbar-light{
@@ -321,10 +318,16 @@ code{
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 585px){
+  .name-head{
+    font-size: 3.0em;
+  }
+}
+
+/* @media (max-width: 500px) {
 
   .mobile-nav{
-    height:inherit;
+    /* height:inherit;
     padding: inherit;
     margin:inherit;
     margin-top: 10px;
@@ -336,7 +339,7 @@ code{
   }
 
   .desk-nav{
-    height: 0px;
+    /* height: 0px;
     margin: 0px;
     padding: 0px;
     visibility: collapse;
@@ -345,14 +348,7 @@ code{
     font-size: 1.8em;
     display:block;
   }
-  .profile-pic{
-    margin: 0px;
-    height: 20vh;
-    min-height:220px;
-  }
-  .profile-pic-column{
-    margin: 0px;
-  }
+
 
   .custom-nav{
     padding-left: 0px;
@@ -447,4 +443,4 @@ code{
   .row-top{
     min-height: 400px;
   }
-}
+} */

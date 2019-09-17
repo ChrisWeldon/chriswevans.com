@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import { Link, Route, Redirect, Switch } from 'react-router-dom';
-import {Navbar, NavDropdown, Button, Nav, Form, FormControl, Spinner} from 'react-bootstrap'
+import {Navbar, NavDropdown, Button, Nav, Form, FormControl, Spinner, Row, Col, Image} from 'react-bootstrap'
 import React, { Component, useState, useCallback } from 'react';
 import Gallery from 'react-photo-gallery'
 import Carousel, { Modal, ModalGateway } from "react-images";
@@ -44,12 +44,32 @@ class About extends Component{
     return (
       <div className="about-body">
         <div class="about-text container">
+          <Row>
+            <Col>
+            </Col>
+            <Col xs={8} md={4}>
+              <Image src={this.props.data.profile_img} class="allign-middle" alt="Chris Evans" roundedCircle/>
+            </Col>
+            <Col>
+            </Col>
+          </Row>
           <h3 class="display-5">About Me</h3>
           <hr/>
           <p>{this.props.data.description}</p>
         </div>
       </div>
     )
+  }
+}
+
+class MainNav extends Component{
+  constructor(props){
+    super(props)
+  }
+
+  render(){
+    return (<>
+      </>)
   }
 }
 
@@ -125,43 +145,30 @@ class App extends Component {
       <div className="App">
         <div class="app-top-bar">
         </div>
+
         <div class="jumbotron jumbotron-fluid masthead">
-          <div class=" masthead-container justify-content-center container">
-            <div class="row  align-items-center">
-              <div class="col-md-5 align-items-center">
-                <h1 class="name-head display-4">{this.state.data.name}, {this.state.data.age}</h1>
-                <p class="lead">{this.state.data.location}</p>
-                <Navbar class="primary-nav"  expand="lg">
-                  <Nav className="desk-nav primary-nav mr-auto">
-                    <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
-                    <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
-                    <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
-                    <Link class = "nav-item nav-link" to="/about" >About</Link>
-                    <Link class = "nav-item nav-link" to="/projects" >Projects</Link>
-                    <Link class = "nav-item nav-link" to="/resume" >Résumé</Link>
-                    <Link class = "nav-item nav-link" to="/gallery" >Gallery</Link>
-                  </Nav>
-                </Navbar>
-              </div>
-              <div class="col-md-5 profile-pic-column justify-content-center">
-                <img src={this.state.data.profile_img} class="rounded-circle profile-pic allign-middle" alt="Chris Evans"/>
-              </div>
-            </div>
+          <div class="masthead-container justify-content-center container">
+            <Row>
+              <h1 class="name-head display-4">{this.state.data.name}, {this.state.data.age}</h1>
+            </Row>
+            <Row>
+              <p class="lead">{this.state.data.location}</p>
+            </Row>
+            <Row class="mt-2">
+              <Navbar >
+                <Nav className="desk-nav mr-auto">
+                  <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
+                  <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
+                  <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
+                  <Link class = "nav-item nav-link" to="/about" >About</Link>
+                  <Link class = "nav-item nav-link" to="/projects" >Projects</Link>
+                  <Link class = "nav-item nav-link" to="/resume" >Résumé</Link>
+                  <Link class = "nav-item nav-link" to="/gallery" >Gallery</Link>
+                </Nav>
+              </Navbar>
+            </Row>
           </div>
-          <Navbar class=""  expand="lg">
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mobile-nav flex-wrap primary-nav mr-auto">
-                <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
-                <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
-                <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
-                <Link class = "nav-item nav-link" to="/about" >About</Link>
-                <Link class = "nav-item nav-link" to="/projects" >Projects</Link>
-                <Link class = "nav-item nav-link" to="/resume" >Résumé</Link>
-                <Link class = "nav-item nav-link" to="/gallery" >Gallery</Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
+
         </div>
         <div class="body container-fluid body-container">
           <Route exact path="/" render={()=>(
