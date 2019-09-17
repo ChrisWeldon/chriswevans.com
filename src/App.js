@@ -156,14 +156,18 @@ class App extends Component {
             </Row>
             <Row class="mt-2">
               <Navbar >
-                <Nav className="desk-nav mr-auto">
-                  <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
-                  <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
-                  <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
-                  <Link class = "nav-item nav-link" to="/about" >About</Link>
-                  <Link class = "nav-item nav-link" to="/projects" >Projects</Link>
-                  <Link class = "nav-item nav-link" to="/resume" >Résumé</Link>
-                  <Link class = "nav-item nav-link" to="/gallery" >Gallery</Link>
+                <Nav className="flex-wrap desk-nav mr-auto">
+                  <span className="d-flex flex-direction-row">
+                    <a class="nav-item nav-link" href="https://github.com/ChrisWeldon"><img src="/web_icons/GitHub-Mark-120px-plus.png" class="social-media" alt="Github"/></a>
+                    <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
+                    <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
+                  </span>
+                  <span  className="d-flex flex-direction-row flex-wrap">
+                    <Link class = "nav-item nav-link" to="/about" >About</Link>
+                    <Link class = "nav-item nav-link" to="/projects" >Projects</Link>
+                    <Link class = "nav-item nav-link" to="/resume" >Résumé</Link>
+                    <Link class = "nav-item nav-link" to="/gallery" >Gallery</Link>
+                  </span>
                 </Nav>
               </Navbar>
             </Row>

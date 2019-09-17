@@ -269,7 +269,7 @@ code{
 }
 
 .masthead-container{
-  height: 30vh;
+  //height: 30vh;
   min-height: 250px;
   background: rgba(76, 175, 80, 0.0);
 
@@ -320,7 +320,7 @@ code{
 
 @media (max-width: 585px){
   .name-head{
-    font-size: 3.0em;
+    font-size: 2.8em;
   }
 }
 
