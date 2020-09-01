@@ -10,6 +10,7 @@ import {BodyContainer} from './BodyContainer.js'
 const ReactMarkdown = require('react-markdown')
 const Discord = require('discord.js')
 
+// <Link class="nav-link" to={match.url + "/MTGForcasting"}>ARIMA on MTG</Link>
 
 class About extends Component{
   constructor(props){
@@ -189,9 +190,10 @@ class App extends Component {
             <>
             <Navbar className="" bg="light" expand="lg">
               <Nav className="flex-wrap secondary-nav mr-auto">
-                <Link class="nav-link" to={match.url + "/MTGForcasting"}>ARIMA on MTG</Link>
+                <Link class="nav-link" to={match.url + "/GarminMinimalVenuWatchface"}>Colors.MC + Minimalist Watchface</Link>
+                <Link class="nav-link" to={match.url + "/MTG-Plays-Frontend"}>MTG Plays Redux Client</Link>
+                <Link class="nav-link" to={match.url + "/MTG-Database-API"}>MTG Database API</Link>
                 <Link class="nav-link" to={match.url + "/chriswevans.com"}>chriswevans.com</Link>
-                <Link class="nav-link" to={match.url + "/CSGOLabeled_Database_Builder"}>CSGO Match Prediction</Link>
                 <Link class="nav-link" to={match.url + "/Beywatch"}>beybladematch.com</Link>
               </Nav>
             </Navbar>
@@ -297,11 +299,10 @@ class App extends Component {
             <a class="nav-item nav-link" href="https://www.linkedin.com/in/christopher-e-594b63128/"><img src="/web_icons/In-Black-128px-R.png" class="social-media" alt="Github"/></a>
             <a class="nav-item nav-link" href="https://www.instagram.com/cwevans612/"><img src="/web_icons/instagram.png" class="social-media" alt="Github"/></a>
           </div>
-          <p>Website designed and built by Chris Evans.
+          <p>&copy; Chris Evans.
           Code License <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a>
           , docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>
           </p>
-          <p>All photos are protected under Copywrite.</p>
         </footer>
       </div>
     );

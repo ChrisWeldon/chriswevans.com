@@ -4,9 +4,9 @@
    "Resume": "Resume Goes here",
    "name": "Christopher W. Evans",
    "age":"20",
-   "location": "Portland, Maine",
-   "profile_img": "/Profile Photo.jpg",
-   "description": "I am currently a Freshman student at UMass Amherst pursuing a computer science undergraduate degree. During the year of 2018-2019, I took a gap year and worked a Tilson Technology Management as a GIS Technician. As a student, I will be continuing to work with GIS while simultaneously practicing my passion for backend web development and data science.",
+   "location": "Portland, Maine / Amherst, Massachusetts",
+   "profile_img": "/Tumbledown.JPG",
+   "description": "I am a student at UMass Amherst, pursuing a BS in both Computer Science and Mathematics. With a strong background in Full-Stack Web Development and industry experience in GIS systems.",
    "projects":[
 
      {
@@ -17,14 +17,14 @@
        "raw": null
      },
      {
-       "name": "Augury",
-       "url_readme":"/private_markdowns/Augury.md",
+       "name": "Colors.MC + Minimalist Watchface",
+       "url_readme":"https://raw.githubusercontent.com/ChrisWeldon/GarminMinimalVenuWatchface/README.md",
        "active":true,
        "in_progress:":false,
        "raw": null
      },
      {
-        "name": "chriswevans.com",
+         "name": "chriswevans.com",
        "url_readme": "https://raw.githubusercontent.com/ChrisWeldon/chriswevans.com/master/README.md",
        "active" : true,
        "in_progress": false,
