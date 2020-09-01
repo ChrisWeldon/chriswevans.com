@@ -303,6 +303,10 @@ class App extends Component {
           Code License <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a>
           , docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>
           </p>
+<<<<<<< HEAD
+=======
+          <p>All photos are protected under Copyright.</p>
+>>>>>>> eaa51ae37d5f03506b58d9b50d47450f56ba03a4
         </footer>
       </div>
     );
